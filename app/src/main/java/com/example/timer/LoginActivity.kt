@@ -17,17 +17,18 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginBtn.setOnClickListener {
-            Api.api.getTest("user").enqueue(object: Callback<Test> {
-                override fun onResponse(call: Call<Test>, response: Response<Test>) {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                    AppData.resetLogoutTimer()
-                }
-
-                override fun onFailure(call: Call<Test>, t: Throwable) {
-
-                }
-
-            })
+//            Api.api.getTest("user").enqueue(object: Callback<Test> {
+//                override fun onResponse(call: Call<Test>, response: Response<Test>) {
+//                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+//                    AppData.resetLogoutTimer()
+//                }
+//
+//                override fun onFailure(call: Call<Test>, t: Throwable) {
+//
+//
+//
+//            })
+            binding.layout.scrollToView(binding.test)
         }
 
     }
